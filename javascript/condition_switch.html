@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin: 10px;
+        }
+        div#box{
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <!-- 버튼을 누를때마다 색깔을 다르게 하기 -->
+    <!-- <button name="1" onclick="select_btn(1);">1</button>
+    <button name="2" onclick="select_btn(2);">2</button>
+    <button name="3" onclick="select_btn(3);">3</button>
+    <button name="4" onclick="select_btn(4);">4</button> -->
+
+    <!-- 1번째꺼는 기본적으로 첫 화면에 체크해놓기! //label만 눌러도 checked박스 누를 수 있음
+     value는 파라미터로 넘기는 용(즉, 백엔드) // 사용자가 값을 직접 적을 수 없을때  -->
+    <input checked type="radio" id="r1" name="1" onclick="select_btn('red');" value="1"><label for="r1">red</label>
+    <input  type="radio" id="r2" name="1" onclick="select_btn('orange');" value="2"><label for="r2">orange</label>
+    <input  type="radio" id="r3" name="1" onclick="select_btn('yellow');" value="3"><label for="r3">yellow</label>
+    <input  type="radio" id="r4" name="1" onclick="select_btn('green');" value="4"><label for="r4">green</label>
+    <hr>
+    <div id="box"></div>
+    <script>
+        select_btn('red');
+        function select_btn(color){
+        // color을 공용으로 사용해야되기 때문에
+        //밖에다가 선언,혼자는 본인 area(전역변수)
+        // let color = "gray";    
+        //      switch(num){
+        //         case 1:  color="red"; break;
+        //         case 2:  color="orange"; break;  
+        //         case 3:  color="yellow"; break;  
+        //         case 4:  color="green"; break; }
+             document.querySelector("div#box").style.backgroundColor=color;
+        }
+    </script>
+</body>
+</html>

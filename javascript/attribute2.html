@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="lalala">라라라</h1>
+    <img id="img" src= "https://placehold.co/200x300">
+    <script>
+        let h1 = document.querySelector('h1#lalala');
+        // 알람창은 바뀌기 전에 껏(라라라)를 출력하고
+        // 화면에 나오는 건 바뀐(로로로)를 출력
+        //가져오는 것
+        alert(h1.innerHTML);
+        // 할당하는 것
+        h1.innerHTML="<p>로로로</p>"
+        //가져오는 것
+        alert(document.querySelector('#img').src);
+        // 할당하는 것
+        document.querySelector('#img').src="https://placehold.co/400x500";
+    </script>
+</body>
+</html>

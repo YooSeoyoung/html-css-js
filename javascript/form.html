@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--사용자가 직접 submit을 하지말고 서버가 값을 확인하고 넘기기
+    / onsubmin="return false;" -->
+    <form action="/member/login" method="post" onsubmit="return false;">
+        아이디 : <input type="text" name="id"><br>
+        패스워드 : <input type="password" name="pwd"><br>
+        <!-- 클릭 시 function이라는 함수를 호출하여 '클릭' 이라는 문구 실행 -->
+        <input type="submit" value="로그인" onclick="submit_go();">
+    </form>
+    <script>
+        // 함수명은 예약어 불가능함
+        function submit_go(){
+        //let id = document.querySelector("input[name='id']").value;
+        //alert(id);
+        
+        // 보통 이렇게 사용함 (대신 가독성 저하)
+        // alert(document.querySelector("input[name='id']").value); 
+        // 혹은 이렇게 사용함
+        // let input_id=document.querySelector("input[name='id']");
+        // alert(input_id.value);
+
+        let input_id=document.querySelector("input[name='id']");
+        let input_pwd=document.querySelector("input[name='pwd']");
+        //id의 value가 없으면 alert를 하고 마우스의 포커스를 id로하기
+        if(!input_id.value){
+            alert("아이디는 필수입니다");
+            input_id.focus();
+            return;
+        }
+         //pwd의 value가 없으면 alert를 하고 마우스의 포커스를 pwd로하기
+        if(!input_pwd.value){
+            alert("패스워드는 필수입니다");
+            input_pwd.focus();
+            return;
+        }
+        //위 사항이 다 입력이 된 후에 submit으로 제출(사용자 제출)
+         document.forms.login.submit();
+        
+        }
+    </script>
+</body>
+</html>

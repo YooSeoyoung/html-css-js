@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <!--자바스크립트를 통한 처리 -->
+    <script>
+     for( let header of document.querySelectorAll("h1")){
+        header.style.color="red";
+        header.style.backgroundColor ="black";}
+    </script>
+    <!--jquery를 통한 처리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // 하지만, h1를 다 잡음 (querySelectorAll이랑 같은 의미)
+        // 하나만 하고 싶으면 h1:first-child 이런식으로 입력 필요!
+        // 순서도 중요함 !(위에서 아래로 처리하기 때문)
+        $('h1:first-child').css("color","green");
+        $('h1:first-child').css("background-color","red");
+        document.querySelector("h1").style.fontSize="40px";
+        // 같이 혼용해서 사용 가능함
+    </script>   
+</body>
+</html>

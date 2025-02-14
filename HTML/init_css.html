@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            /* 브라우저에서 제공하는 기본 위/옆의 여백을 직접 수정하여 어떤
+            브라우저에서 열어도 위/옆에 여백이 없을 수 있도록 기본설정 */
+            padding: 0;  margin: 0;
+            /* 화면에 기본 폰트 사이즈를 제공 */
+            font-size: 12px;
+            /* 폰트의 우선순위를 결정 */
+            font-family: '맑은 고딕','돋움체';
+            /* 화면에 기본 폰트 색상 제공 */
+            color: rgb(32, 32, 32);
+        }
+        h1{ /* 기본 폰트 사이즈의 2.0배로 지정(*보다 우선순위) */
+            font-size: 2.0em; color: red;
+            background-color: orange; }
+        h1#my{ /* h1의 id가 my인 것에 대한 스타일 적용(기본 h1보다 우선순위) */
+            font-size: 2.0em; color: blue;
+            background-color: orange;}    
+         h2{ 
+            font-size: 1.5em; }    
+        h3{ 
+            font-size: 1.2em;}
+            /* class btn으로 묶은 태그들의 스타일 적용 */
+        .btn{
+            display: block;
+            width: 40px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            background-color: gray;
+            color: white;
+            box-shadow:
+            1px 1px 2px 2px rgba(0,0,0,0.12);
+            cursor: pointer;
+        }  
+         /*class btn으로 묶은 태그 중에 개인 별로 추가 스타일 적용  */
+        .btn-add{background-color: blue;}
+        .btn-modify{ background-color: orange;}
+        .btn-del{background-color: red;}
+        .btn-list{background-color: green;}
+        .button.btn-add{background-color: brown; width: 60px;}
+    </style>
+</head>
+<body>
+    <!-- 하나의 클래스로 묶어서 위에 있는 스타일을 적용하는 것 / 
+    id는 고유하기 때문에 똑같은 스타일을 적용을 하고 싶으면 각각 따로 만들어야됨 -->
+    <span class="btn btn-add">등록</span>&nbsp;&nbsp;&nbsp;
+    <span class="btn btn-modify">수정</span>&nbsp;&nbsp;&nbsp;
+    <span class="btn btn-del">삭제</span>&nbsp;&nbsp;&nbsp;
+    <span class="btn btn-list">취소</span>&nbsp;&nbsp;&nbsp;
+    <span class="btn">목록</span>
+    <hr>
+    <p>안녕하세요</p>
+    <h1>안녕하세요</h1>
+    <h1 id="my">안녕하세요</h1>
+    <h2>안녕하세요</h2>
+    <h3>안녕하세요</h3>
+    <a href="#">안녕하세요</a>
+    <!-- <h2 class="btn btn-add">회원가입</h2> -->
+    <button class="btn btn-add">회원가입</button>
+</body>
+</html>

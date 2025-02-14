@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia</title>
+</head>
+<body>
+    <button file="1.jpg">1</button>&nbsp;&nbsp;
+    <button file="2.jpg">2</button>&nbsp;&nbsp;
+    <button file="3.jpg">3</button><br/>
+    <hr/>
+    <!-- 디폴트 이미지 -->
+    <img src="./resources/media/Penguins.jpg" alt="Penguins" width="300"/>  
+    <img src="Nothing" alt="그림이 존재하지 않습니다" width="300"/>
+
+    <script>
+        // 이벤트처리( 이벤트 처리 ) --> 클릭하는 버튼에 따라 보이는 이미지를 변경
+        //하나의 버튼만 있는게 아니라 여러개의 버튼이 있기 때문에 all로 표시
+        for(var btn of document.querySelectorAll('button')){  
+            btn.onclick =function(){ //버튼을 눌렀을 때 
+               // alert(this.name); // 버튼을 누르면 name을 화면에 보여줌
+               let src = "./resources/media/"+this.getAttribute("file");  //공통의 경로(버튼의 file을 가지고 오는 것임)
+            //    switch(this.name){ // 경우의 수 (케바케)
+            //     case "1" : scr+="1.jpg"; // src = src+1.jpg
+            //     break;
+            //     case "2" : scr+="2.jpg"; // src = src+2.jpg
+            //      break;
+            //     case "3" : scr+="3.jpg"; // src = src+3.jpg
+            //     break;
+            //    }
+               //alert(src); // 버튼을 누르면 파일 경로가 나옴(./resources/media/1.jpg)
+               document.querySelector("img[alt='Penguins']").src=src;
+            }
+        }
+    </script>
+</body>
+</html>

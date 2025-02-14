@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 TEXT Basic Page</title>
+    <style>
+        /* 많은 a태그 중에 원하는 것만 골라서 스타일 적용 시, a[속성]을 지정해서 수정하기 */
+        a[href="#top"]{
+            background-color: gray;
+            color: white;
+            /* 인라인 태그는 차지하는 글자 수 만큼만 공간 차지 및 가로 세로 크기 지정 불가 , 
+            블록 태그는 하나의 태그가 하나의 블록를 공간으로 보유 및 가로 세로 크기 지정 불가*/
+            /* 인라인 태그를 블록 태그로 변경  */
+            display: block; 
+            width: 50px;
+            height: 50px;
+            /* 테두리 지정 */
+            border: 3px solid lightgray;
+            /* 글자의 위치 지정 */
+            text-align: center;
+            /* 세로에서의 위치 지정 */
+            line-height: 50px;
+            /* 하이퍼링크의 기본 밑줄 빼기 */
+            text-decoration: none;
+            /* 오른쪽 아래로 배치하는 방법 */
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+        }
+    </style>
+
+</head>
+<body id="top">
+    <a href="#alpha">Alpha 부분</a>
+    <a href="#beta">Beta 부분</a>
+    <a href="#gamma">Gamma 부분</a>
+    <a href="#top">Top</a>
+    <hr >
+    <h1 id="alpha">Alpha</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p> 
+    <h1 id="beta">Beta</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <h1 id="gamma">Gamma</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>   
+</body>
+</html>

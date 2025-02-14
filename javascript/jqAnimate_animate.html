@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $("#box").css({
+            width : 100,
+            height : 100,
+            background : "red"
+        }).animate({
+            // 0.5초 안에 기존 css 스타일에서
+            //  너비 300에 불투명도 0.5 적용
+            width : 300,
+            opacity :0.5,
+        },500).animate({
+            // 다시 원상 복귀
+            width :100,
+            opacity:1
+        });
+    </script>
+    
+</body>
+</html>

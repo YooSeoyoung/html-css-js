@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia</title>
+    <style>
+        div#picture{
+            width: 220px; height: 250px;
+            background-color: black;
+
+            background-image: url('./resources/media/Penguins.jpg');
+            background-repeat: no-repeat;
+            /* 이미지를 모두 덮도록 (대신 일부 짤릴 수 있음) 
+            // contain :  다 들어오도록 하는데 대신 여백 생길 수 있음 */
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <button file="1.jpg">1</button>&nbsp;&nbsp;
+    <button file="2.jpg">2</button>&nbsp;&nbsp;
+    <button file="3.jpg">3</button><br/>
+    <hr/>
+    <div id="picture"></div>
+    <script>
+        for(var btn of document.querySelectorAll('button')){  
+            btn.onclick =function(){ 
+               let src = "./resources/media/"+this.getAttribute("file"); 
+               document.querySelector('div#picture').style.backgroundImage="url("+src+")";
+            }
+        }
+    </script>
+</body>
+</html>

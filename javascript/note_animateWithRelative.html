@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $('#box').css({
+            width : 100,
+            heigh : 100,
+            background : "red",
+            position : "absolute",
+            left : 10,
+            top : 10
+        }).animate({
+            // 1초 동안 기본 css 유지 후 다음 애니메이션 실행(시간 인터벌)
+            width : 100
+        },1000).animate({
+            height : "+=300",
+            width :"+=50",
+            left :"+300",
+            opacity : 0.5
+        },500);
+    </script>
+    
+</body>
+</html>

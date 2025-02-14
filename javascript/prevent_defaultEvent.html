@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 알람은 나오는데 이동은 안하기(return false) -->
+    <a href="/member/regist" onclick="alert('!!!!');return false;">회원 등록</a>
+
+    <!-- 별도의 function을 만들어서 코드 분리를 하는 것!!!
+     (너무 길어지는 것을 방지하는 것)-->
+    <a href="/member/regist" onclick="script_func();return false;">회원 등록</a>
+
+    <!-- enter 버그를 방지하기 위해  onsubmit="return false;를 해주는 것  -->
+    <form action="/member/regist" onsubmit="return false;">
+        아이디 : <input type="text" name="id"><br>
+        <input type="submit" value="등록">
+    </form>
+
+    <script>
+        function script_func(){
+            alert("!!!!");
+        }
+    </script>
+
+    
+</body>
+</html>

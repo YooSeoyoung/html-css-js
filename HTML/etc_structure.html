@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            width: 80px;
+            text-align: center;
+            list-style: none;
+            /* 옆으로 나열 / 근데 너무 다닥다닥 붙음 */
+            float: left;
+            /* 내부 여백(하지만 내용에 따라서 다라서 width를 주는게 좋음) */
+            padding: 15px;
+            background-color: blue;
+            color: white;
+        }
+        /* 양끝에 있는 박스의 모서리를 둥글게 하기 */
+        li:first-child{ border-radius: 10px 0px 0px 10px; }
+        li:last-child{ border-radius: 0px 10px 10px 0px; }
+        /* 짝수의 박스의 색깔만 변경 */
+        li:nth-child(2n){background-color: rgb(2, 2, 151);}
+        /* 커서 올린 박스의 스타일 변경(네비) */
+        li:hover{background-color: red;
+        color: yellow; font-weight: bold; cursor: pointer;}
+    </style>
+    <style>
+        h1{
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            border-radius: 10px 0px 0px 10px; }
+    </style>
+</head>
+<body>
+    <h1 id="circle"></h1>
+    <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+        <li>세 번째</li>
+        <li>네 번째</li>
+        <li>다섯 번째</li>
+        <li>여섯 번째</li>
+        <li>일곱 번째</li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <!-- 암호를 입력하면 아래 div를 보이게 -->
+    <h3>관리자 암호를 입력하세요</h3>
+    <input type="text" name="pwd">
+    <button id="confirm" onclick="confirm_pwd();">확인</button>
+    <hr>
+    <!-- 보통 화면에 마크업으로 보이지 않고 
+     패스워드를 입력하면 서버쪽에서 화면을
+     보내주는 형식 등으로 함(마크업은 공용) -->
+    <div id="view" style="display:none;">
+        <h1>관리자 메뉴</h1>
+        <p>관리자 화면</p>
+    </div>
+    <script>
+        function confirm_pwd(){
+            let pwd= document.querySelector("input[name='pwd']").value;
+            //등가 비교는 무조건 == / =은 문법적으로 오류가 없기 때문에
+            // 무한루프가 발생할 수 있음 
+            while(pwd !="1234"){
+                pwd=prompt("관리자가 암호를 다시 입력하세요");
+                //만약 취소를 하게 되면 while문을 탈출하기!!!
+            if(pwd==null){
+                return;}}
+            // ""없으면 변수로 보기 때문에 ""를 넣어주기!!
+            document.querySelector("div#view").style.display="block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>성별</th>
+        </tr>
+        <tr>
+            <!-- db를 안갔다와도 부모의 정보를 가져올수 있음
+             대신 ,화면에 표시하는게 아님!!필요할때 쓸 수 있음 
+             attribute 속성을 추가하는 것임-->
+            <td data-role="name" parent-phone="010-1234-1234" parent-name="mama" address="대전광역시 유성구 관평동">mimi</td>
+            <td name="age">14</td>
+            <td>여</td>
+        </tr>
+        <tr>
+            <td data-role="name" parent-phone="010-4567-4567" parent-name="mamamanu" address="대전광역시 유성구 지족동">mimiminu</td>
+            <td name="age">15</td>
+            <td>남</td>
+        </tr>
+        <tr>
+            <td data-role="name" parent-phone="010-8974-8974" parent-name="manu" address="대전광역시 유성구 노은동">minu</td>
+            <td name="age">16</td>
+            <td>여</td>
+        </tr>
+        <tr>
+            <td data-role="name" parent-phone="010-5252-5252" parent-name="mamanu" address="대전광역시 유성구 반석동">miminu</td>
+            <td name="age">17</td>
+            <td>남</td>
+        </tr>
+    </table>
+    <script>
+       let tds= document.querySelectorAll("td[data-role='name']");
+        for(let td of tds){
+            td.style.cursor="pointer";
+            //핸들러
+            td.onclick=function(){
+                // 보호자의 전체 정보를 key와 value 형식으로 추출
+                //this.Attribute가 없으면 브라우저는 못알아들음(표준 속성이 아니기 때문)
+                let parent='보호자 정보\n'
+                +'이름 :' + this.getAttribute('parent-name')+"\n"
+                +'연락처 : ' + this.getAttribute('parent-phone')+"\n"
+                +'주소 : ' + this.getAttribute('address')
+
+                alert(parent);
+                //내가 만든 속성 중 누른 것의 parent-phone을 알람 창에 보여주기
+                // alert(this.getAttribute('parent-phone'));
+            }
+        }
+        tds =document.querySelectorAll('td[name="age"]');
+        for(let td of tds){
+            td.onclick=function(){
+                alert(this.getAttribute('name'));
+            }
+        }
+    </script>
+</body>
+</html>

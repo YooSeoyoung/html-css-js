@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="member/register" method="post">
+    <table border="1">
+        <tr>
+            <td rowspan="4" colspan="2"> 
+                <img src="./resources/media/2.jpg" alt="증명사진" width="150">
+            </td>
+            <td>아이디</td>
+            <td><input type="text" name="id" maxlength="20" placeholder="아이디를 입력해주세요"></td>
+            <td>패스워드</td>
+            <td><input type="password" name="pwd" maxlength="20" placeholder="비밀번호를 입력해주세요"></td>
+        </tr>
+        <tr>
+            <td>전화번호</td>
+            <td>
+                <!-- 선택할 수 있는 선택지를 주면서 그 중에서만 할 수 있도록 option: 선택지 작성-->
+                <select name="phone" style="width: 50px;">
+                <option value="010">010</option>
+                <option value="012">012</option>
+                <option value="016">016</option>
+                <option value="017">017</option>
+            </select>
+            <!-- 4개의 숫자만 작성할 수 있도록 maxlength 설정// 숫자만 나올 수 있도록 하는건 css에서 가능함 -->
+            - <input type="text" max="phone" maxlength="4" style="width: 30px;"/>
+            - <input type="text" max="phone" maxlength="4"style="width: 30px;"/>
+        </td>
+            <td>이메일</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td colspan="3"><input type="text" name="address"/>&nbsp;<button>검색</button>
+            상세주소: <input type="text" name="address"></td>
+        </tr>
+        <tr>
+            <td> 생년월일</td>
+            <td colspan="3">
+                <!-- <input type="date" name="birth"> <br> //스마트폰 브라우저에 안나와서 보통 사용하지 않음--> 
+                <select name="birth">
+                <option >년</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>       
+                -<select name="birth">
+                <option >월</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+            </select>           
+            -<select name="birth">
+                <option >일</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>학력</td>
+            <td>
+                <select name="edu" >
+                    <option >학력</option>
+                    <option value="00">초등학교</option>
+                    <option value="01">중등학교</option>
+                    <option value="02">고등학교</option>
+                    <option value="03">전문대학교</option>
+                    <option value="04">종합대학교</option>
+                    <option value="05">대학원</option>
+                </select>
+                &nbsp;&nbsp;
+                <select name="grade" >
+                    <option >상태</option>
+                    <option value="00">졸업</option>
+                    <option value="01">수료</option>
+                    <option value="02">재학</option>
+                    <option value="03">휴학</option>
+                    <option value="04">자퇴</option>
+                    <option value="05">재적</option>
+                </select>
+
+            </td>
+            <td>병역</td>
+            <td colspan="3">
+                <input type="text" name="mili">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">MBTI</td>
+            <td colspan="4">
+                <select name="mbti">
+                    <option value="i">I</option>
+                    <option value="e">E</option>
+                </select>
+                &nbsp;
+                <select name="mbti">
+                    <option value="s">S</option>
+                    <option value="n">N</option>
+                </select>
+                &nbsp;
+                <select name="mbti">
+                    <option value="t">T</option>
+                    <option value="f">F</option>
+                </select>
+                &nbsp;
+                <select name="mbti">
+                    <option value="p">P</option>
+                    <option value="j">J</option>
+                </select>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">기타사항</td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <!-- 내용을 입력하면 보이기 때문에 별도의 스페이스 없이 그대로 놨더야됨 -->
+                <textarea rows="7" cols="80"></textarea>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="등 록"> &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="reset" value="취 소">
+</form>   
+</body>
+</html>

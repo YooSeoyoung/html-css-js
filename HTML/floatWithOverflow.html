@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 가상적으로 element를 추가할때 사용 */
+        div.container::after{
+                content: "";
+                display: block;
+                clear: both; }
+        div.item{
+            width: 100px;
+            height: 40px;
+            margin: 0 3px;
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 40px;
+            float: left; }
+        div.cleart{ clear: both; }
+    </style>
+</head>
+<body>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <div class="container">
+        <div class="item">메뉴-1</div>
+        <div class="item">메뉴-2</div>
+        <div class="item">메뉴-3</div>
+        <div class="item">메뉴-4</div>
+        <div class="clear"></div>
+    </div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</body>
+</html>

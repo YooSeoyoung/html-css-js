@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: red;}  
+    /* id의 범위가 class 더 좁기 때문에 우선순위가 더 높기 때문에
+     .hover랑 공통적으로 들어간 background-color는 #box에 존속 */
+    .hover{
+        background-color: blue;
+        border-radius: 50px;}
+    /* #box보다 #box.hover의 범위가 더 좊아지기 때문에 
+    #box.hover의 우선순위가 더 높아짐 */
+    #box.hover{
+        background-color: blue;
+        border-radius: 50px;}
+</style>
+<body>
+    <div id="box"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $('#box').hover(function(){
+            $('#box').addClass('hover');},
+            function(){
+            $('#box').removeClass('hover');});
+    </script>
+</body>
+
+</html>

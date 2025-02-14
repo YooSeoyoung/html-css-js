@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        아이디 : <input type="text" name="id"><br>
+        패스워드 : <input type="text" name="pwd"><br>
+        이름 : <input type="text" name="name"><br>
+        이메일 : <input type="text" name="email"><br>
+        전화번호 : <input type="text" name="phone"><br>
+        주소 : <input type="text" name="address"><br>
+    </form>
+    
+    <script>
+        let product={
+            제품명:'7D 건조 망고',
+            유형:'당절임',
+            성분:'망고, 설탕, 메타중아황산나트륨, 치자황색소',
+            원산지 : '필리핀' 
+        };
+        // for(let i in product){ alert(i+ ':' +product[i]);}
+
+        // json에서는 사용할수 없음
+        // (어떤 요소를 꺼낼지를 모름: key와 value로 구성)
+        // for(let i of product){alert(i);}
+
+        //키 값만 추출해서 콘솔에 찍히기
+        console.log(Object.keys(product));
+        for(let key of Object.keys(product) ){
+            // 그냥 key를 하면 key 출력 product[key] : value만
+            alert(key+":"+product[key]);
+        }
+    </script>
+    <script>
+        let member={
+            id:"mimi",
+            pwd:"mimi",
+            name:"mimi",
+            email:"mimi@mimi.com",
+            phone:"010-1234-1234",
+            address:"대전 유성구 노은동"
+        };
+
+        for(let key of Object.keys(member)){
+           document.querySelector("input[name='"+key+"'']").value=member[key];
+        }
+    </script>
+</body>
+</html>

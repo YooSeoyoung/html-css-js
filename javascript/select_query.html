@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+
+<script>
+    // 같은 h1 태그들이라도 맨 첫번째껏만 적용됨
+    for(let header of document.querySelectorAll("h1")){
+        header.style.color ="orange";
+        header.style.backgroundColor="red";
+        header.innerHTML="Form Javascript";
+    }
+</script>
+</body>
+</html>

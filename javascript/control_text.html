@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let output='';
+        for(let i=0;i<10;i++){
+            output+= '<h1>Header -'+i+'</h1>';
+        }
+        console.log(output);
+
+        //진짜 문자열 형식으로 브라우저 화면에 표시
+        document.body.innerText=output;
+        //태그 형식으로 반환
+        document.body.innerHTML= output;
+    </script>
+</body>
+</html>

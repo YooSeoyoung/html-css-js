@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 자손 후손 선택자를 통한 스타일 적용 방법 -->
+    <style>
+        /* section라는 부모id의 자손(후손)인 h1태그의 모든 글자 색을 변경 */
+            #section h1{color: orange;}
+        /* header라는 부모id의 자손인 h1태그의 모든 글자 색을 변경(자손만!!!) */
+            #header> h1{color: red;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+</body>
+</html>

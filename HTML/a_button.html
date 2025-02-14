@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            /* 앵커는 인라인 태그이기 때문에 너비와 높이를 
+            줄 수 없어 display를 block으로 바꾼뒤에 별도의
+            내용 입력 없이 사용할 수 있음 */
+            display: block;
+            width: 50px; height: 30px;
+            background-image: url("./resources/media/naver_logo.png");
+            /* 이미자가 다 들어오도록 알아서 확대 및 축소해줌 */
+            background-size: contain;
+            /* 가운데 위치 */
+            background-position:center ;
+            /* 반복 x */
+            background-repeat: no-repeat ;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.naver.com"></a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+
+<script>
+    //setAttribute 하기!!(속성명 , 속성이름)
+    document.querySelector('div').setAttribute("id","box");
+    //개발자 모드에는 div에 속성이 추가되었음으로 
+    // 해당 속성명으로 스타일 추가 등 작업 가능
+    document.querySelector('#box').style.width="200px";
+    document.querySelector('#box').style.height="200px";
+    document.querySelector('#box').style.backgroundColor="red";
+</script>
+</body>
+</html>

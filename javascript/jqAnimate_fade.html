@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Toggle Show</button>
+        <div class="page">
+            <h1>안녕하세요</h1>
+            <p>안녕하세요 저는 유서영입니다! 나이는 00살이고 대전광역시에서 거주하고 있습니다.!!!!!</p>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // 버튼을 누르면 div 태그로 감싸진 부분이 서서히 없어짐
+        $('button').click(function(){
+            $('.page').fadeToggle('slow');
+        });
+    </script>
+
+</body>
+</html>

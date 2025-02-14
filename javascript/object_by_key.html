@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let obj={
+            name:"kim",
+            eat:function(food){
+                return this.name+"과 함께"+food
+                +"를 먹었습니다";
+            }
+        };
+        // 점 연산자를 이용
+        alert(obj.name+"은 "+obj.eat("밥"));
+        // 데이터 추가 가능
+        obj.id = "mimi";
+        // 데이터를 수정도 가능
+        obj.name="Park";
+        obj.eat = function(food){
+            return food+"는 먹기 싫어요.";
+        };
+        alert(obj.name+"은 "+obj.eat("밥"));
+        console.log(obj);
+
+    </script>
+</body>
+</html>

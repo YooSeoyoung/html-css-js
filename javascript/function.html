@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a(){alert("a func"); }
+        let  b = function(){ alert("b func"); }
+        let c = b;       let d = a;
+        // value 자리만 와야될때는 익명함수
+        let json={
+            name:"kim",
+            func:function(){
+                alert(this.name);
+            }
+        }
+    </script>
+    <script>
+        a(); b(); c(); d();
+        // 둘다 key 값이지만 name은 문자열 // func는 함수
+        alert(json.name); 
+        json.func();
+    </script>
+</body>
+</html>

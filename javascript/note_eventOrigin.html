@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button"> 버튼 -</button>
+    <button id="btn"> 버튼 -</button>
+
+    <script>
+        // 클릭한 만큼 별이 보이도록 하기
+        //이벤트 자체의 고유성!!!다른 애는 사용 불가
+        //고전 이벤트 방식(미리 만들어놓지 않는 것)
+        document.querySelector('button').onclick= function(){
+            this.textContent=this.textContent + '★';
+        };
+
+        //다른 태그 들도 사용할 수 있도록 처리하고 싶다면
+        //분리하여 별도로 함수명을 지정하기
+        document.querySelector('#button').onclick= star;
+        document.querySelector('#btn').onclick= star;
+
+        
+        function star(){
+            this.textContent=this.textContent + '★';
+        };
+
+
+
+    </script>
+
+</body>
+</html>

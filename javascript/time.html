@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'DS-Digital';
+        }
+    </style>
+</head>
+<body>
+    <h1 id="date">0000.00.00</h1>
+    <h1 id="time">00:00:00</h1>
+    <script>
+        function time(){
+         let date =new Date();
+        //  let year = date.getFullYear();
+        //  let month = date.getMonth()+1;
+        //  let day = date.getDate();
+        //  let hours = date.getHours();
+        //  let minutes = date.getMinutes();
+        //  let seconds = date.getSeconds();
+
+         let date_value = date.getFullYear()+"." +(date.getMonth()+1)+"."+date.getDate();
+         let time_value = date.getHours()+":"+ date.getMinutes()+":"+date.getSeconds();
+        //  innerHTML : 해당 id의 html에 해당 객체를 삽입
+        document.querySelector("#date").innerHTML=date_value;
+        document.querySelector("#time").innerHTML=time_value;
+        }
+        //자동으로 milisecond만큼 자동화하기
+        //원래는 time 부분에 function을 주는거지만 
+        //가독성이 없기 때문에 분리해서 작성 후 
+        //function명을 주는것() -> value를 주는 것
+        // 즉, 실행의 의미가 아님
+        setInterval(time,1000);
+        time();
+
+    </script>
+</body>
+</html>

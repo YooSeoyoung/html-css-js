@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let array=[1,"abc",function(){alert("func"); return 3},true,null];
+        console.log(array[0]);
+        console.log(array[1]);
+        // function은 콘솔에 찍을 수 없음
+        // console.log(array[2]());
+        //이런식으로 실행을 해야됨 
+        array[2]();
+        //console.log에 찍히고 싶으면 return 값 부여
+        console.log(array[2]());
+        console.log(array[3]);
+        console.log(array[4]);
+
+    </script>
+</body>
+</html>
