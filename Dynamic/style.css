@@ -1,0 +1,117 @@
+@charset 'utf-8';
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* header */
+hearder{
+    width: 100%;
+}
+header .inner{
+        width: 1180px;
+        height: 120px;
+        margin: 0 auto;
+        position: relative;
+}
+header .inner .util{
+
+    display: flex;
+    justify-content: space-between;
+}
+header .inner .util li{
+ width: 100%;
+}
+header .inner .util li a{
+    display: block;
+    font: 12px/1 "arial";
+    color: black;
+    text-align: center;
+}
+
+header .inner .util li a img{
+    object-fit: contain;
+    width: 100%;
+    height: 30px;
+}
+
+header .inner .util li label{
+    font: 12px/1 "arial";
+    color: black;
+}
+header .inner .util li input{
+    height: 18px;
+}
+
+header .inner .util li img{
+    object-fit: contain;
+    width: 100%;
+    height: 30px;
+}
+
+section{
+    width: 100%;
+    padding-top: 20px;
+
+}
+section .inner{
+    width: 1180px;
+	margin: 0 auto;
+    position: relative;
+}
+
+section .inner img{
+    object-fit: contain;
+    width: 100%;
+    height: 100px;
+}
+
+section .inner .login{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 150px;
+    height: 100%;
+}
+
+section .inner .login form{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+
+
+
+}
+section .inner .login form label{
+    display: block;
+    font:bold 12px/1 "arial";
+}
+section .inner .login form #user-id{
+    width: 100%;
+    padding: 1px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+section .inner .login form #pw{
+    width: 100%;
+    padding: 1px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+section .inner .login form #submit{
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+}

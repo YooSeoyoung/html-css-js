@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <ul class="util">
+                <li><a href="#"><img src="./img/home.png" alt="홈">홈</a></li>
+                <li><a href="#"><img src="./img/product.png" alt="제품">제품</a></li>
+                <li><a href="#"><img src="./img/board.png" alt="게시판">게시판</a></li>
+                <li>
+                    <label for="search">검색</label>
+                    <input type="text" id="search" placeholder="검색어를 입력하세요">
+                    <button type="submit" onsubmit="return false;"><img src="./img/search.png" alt="검색버튼"></button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section>
+        <div class="inner">
+            <img src="./img/임시 로고.png" alt="로고">
+            <div class="login">
+                <form action="/api/user/login" method="post" >
+                    <label for="user-id"> 아이디 : </label><input type="text"  id="user-id"><br>
+                    <label for="pw">비밀번호 : </label><input type="password" id="pw"> <br>
+                    <input type="submit" id="submit" value="LOGIN" onsubmit="return false;">
+                 </form>
+                 <a href="#">아이디 찾기</a>
+                 <a href="#">회원가입</a>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#">나의 페이지</a>
+                        <ul>
+                            <li><a href="#">프로필 관리 및 수정</a></li>
+                            <li><a href="#">포인트 조회</a></li>
+                            <li><a href="#">구매 내역</a></li>
+                            <li><a href="#">직원 정보</a></li>
+                            <li><a href="#">나의 목록</a></li>
+                            <li><a href="#">장바구니</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">제품</a>
+                        <ul>
+                            <li><a href="#">강의</a></li>
+                            <li><a href="#">정기 구독권</a></li>
+                            <li><a href="#">무료 체험 서비스</a></li>
+                        </ul>
+                    </li>    
+                    <li><a href="#">고객 지원</a>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">서식 자료실</a></li>
+                            <li><a href="#">가이드</a></li>
+                        </ul>
+                    </li>                   
+                </ul>
+            </nav>
+            <div class="banner-notice">
+                <div class="notice">
+                    <ul>
+                        <li>
+                            <b>업데이트</b>
+                            <a href="#">2025년 신규 웹 애플리케이션 출시</a>
+                        </li>
+                        <li>
+                            <b>무료 급여명세서 이용</b>
+                            <a href="#">2025년 신규 웹 애플리케이션 출시기념 5회 무료 이용</a>
+                        </li>
+                        <li>
+                            <b>급여명세서 정기구독권 제품 추가</b>
+                            <a href="#">2023년 11월 급여명세서 교부 의무화!!</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="banner">
+                    <img src="./img/임시 배너 이미지.png" alt="배너이미지">
+                </div>
+            </div>
+        </div> 
+    </main>
+    <footer>
+        <div class="inner">
+            <div class="upper">
+                <h1>DO YOURSELF or USE SERVICE</h1>
+            </div>
+            <div class="lower">
+                <address>
+                    대전광역시 서구 둔산동 1524 <br>
+                    TEL : 03-111-1234 C.P : 010-01234-5678
+                </address>
+                <p>
+                    2020 DO YOURSELF or USE SERVICE &copy; copyright all right reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
