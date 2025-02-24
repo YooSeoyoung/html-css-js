@@ -4,5 +4,7 @@
 			"path": "HTML"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
 }
