@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">.
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="/application/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
+  
+  
+<link rel="stylesheet" href="/application/resources/bootstrap/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="/application/resources/bootstrap/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="/application/resources/bootstrap/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/application/resources/bootstrap/dist/css/adminlte.min.css?v=3.2.0">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/application/resources/bootstrap/plugins/summernote/summernote-bs4.min.css">
+</head>
+<body>
+  
+	<section class="content-header">
+    <div class="container-fluid">
+      <div class="row md-2">
+        <div class="col-sm-6">
+          <h1>상세보기</h1>  				
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item">
+              <a href="list.do">
+                <i class="fa fa-dashboard"></i>자유게시판
+              </a>
+            </li>
+            <li class="breadcrumb-item active">
+              상세보기
+            </li>		        
+        </ol>
+        </div>
+      </div>
+    </div>
+</section>
+ 
+ 
+    <!-- Main content -->
+  <section class="content container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-outline card-info">
+        <div class="card-header">
+          <h3 class="card-title">상세보기</h3>
+          <div class="card-tools">
+            <button type="button" id="modifyBtn" class="btn btn-warning" onclick="submit_go('modifyForm.do');">MODIFY</button>						
+              <button type="button" id="removeBtn" class="btn btn-danger" onclick="submit_go('remove.do');">REMOVE</button>
+              <button type="button" id="listBtn" class="btn btn-primary" onclick="CloseWindow();">CLOSE</button>
+            </div>
+        </div>
+        <div class="card-body">
+          <div class="form-group col-sm-12">
+            <label for="title">제 목</label>
+            <input type="text" class="form-control" id="title" readonly disabled value="${board.title }" />							
+          </div>
+          <div class="row">	
+            <div class="form-group col-sm-4" >
+              <label for="writer">작성자</label>
+              <input type="text" class="form-control" id="writer" readonly value="${board.writer }"/>
+            </div>		
+            
+            <div class="form-group col-sm-4" >
+              <label for="regDate">작성일</label>
+              <input type="text" class="form-control" id="regDate" readonly 
+                value="<fmt:formatDate value="${board.regDate }" pattern="yyyy-MM-dd" />" />
+            
+            </div>
+            <div class="form-group col-sm-4" >
+              <label for="viewcnt">조회수</label>
+              <input type="text" class="form-control" id="viewcnt" readonly value="${board.viewcnt }"/>
+            </div>
+          </div>		
+          <div class="form-group col-sm-12">
+            <label for="content">내 용</label>
+            <div id="content">${board.content }</div>	
+          </div>
+                      
+        </div>													
+      </div><!-- end card -->				
+    </div><!-- end col-md-12 -->
+  </div><!-- end row  -->
+  </section>
+  <!-- /.content -->
+      
+  
+  <!-- Reply content -->
+  <section class="content container-fluid">
+    <!-- reply component start --> 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-info">					
+        <div class="card-body">
+          <!-- The time line -->
+          <div class="timeline">
+            <!-- timeline time label -->
+            <div class="time-label" id="repliesDiv">
+              <span class="bg-green">Replies List </span>							
+            </div>
+            
+            
+          </div>
+          <div class='text-center'>
+            <ul id="pagination" class="pagination justify-content-center m-0" >
+              
+            </ul>
+          </div>
+        </div>
+        <div class="card-footer">
+          <label for="newReplyText">Reply Text</label>
+          <input class="form-control" type="text"	placeholder="REPLY TEXT" id="newReplyText">
+          <br/>
+          <button type="button" class="btn btn-primary" id="replyAddBtn" onclick="replyRegist_go();">ADD REPLY</button>
+        </div>				
+      </div>			
+      
+    </div><!-- end col-md-12 -->
+  </div><!-- end row -->
+  </section>
+
+<!-- /.content -->
+
+
+<!-- Modal -->
+<div id="modifyModal" class="modal modal-default fade" role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" style="display:none;"></h4>
+      <button type="button" class="close" data-dismiss="modal">&times;</button>        
+    </div>
+    <div class="modal-body" data-rno>
+      <p><input type="text" id="replytext" class="form-control"></p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" id="replyModBtn" onclick="replyModify_go();">Modify</button>
+      <button type="button" class="btn btn-danger" id="replyDelBtn" onclick="replyRemove_go();">DELETE</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>  
+
+<!-- jQuery -->
+<script src="/application/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/application/resources/bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/application/resources/bootstrap/dist/js/adminlte.min.js?v=3.2.0"></script>
+<!-- common -->
+<script src="/application/resources/js/common.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+<script type="text/x-handlebars-template"  id="reply-list-template" >
+{{#each .}}  
+<div class="replyLi" >
+  <div class="user-block">
+     <img src="/application/member/getPicture.do?id={{replyer}}" class="img-circle img-bordered-sm" style="object-fit: cover;"/>
+   </div>   
+  <div class="timeline-item" >
+       <span class="time">
+         <i class="fa fa-clock"></i>{{prettifyDate regdate}}
+         <a class="btn btn-primary btn-xs {{rno}}-a" id="modifyReplyBtn" data-rno={{rno}} onclick="replyModifyModal_go('{{rno}}');"            
+           style="display:{{VisibleByLoginCheck replyer}};"
+            data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">Modify</a>
+       </span>
+  
+       <h3 class="timeline-header"><strong style="display:none;">{{rno}}</strong>{{replyer}}</h3>
+       <div class="timeline-body" id="{{rno}}-replytext">{{replytext}} </div>
+  </div>
+</div>
+{{/each}}
+</script>
+<script type="text/x-handlebars-template"  id="reply-pagination-template" >
+  <li class="page-item">
+     <a class="page-link" href="{{goPage 1}}">
+        <i class="fas fa-angle-double-left"></i>
+     </a>
+  </li>
+  <li class="page-item">
+     <a class="page-link" href="{{#if prev}}{{goPage prevPageNum}}{{else}}{{goPage 1}}{{/if}}">
+        <i class="fas fa-angle-left"></i>
+     </a>                  
+  </li>
+  {{#each pageNum}}
+     <li class="paginate_button page-item {{signActive this}} ">
+        <a href="{{goPage this}}" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">{{this}}</a>
+     </li>
+  {{/each}}
+  <li class="page-item">
+     <a class="page-link" href="{{#if next}}{{goPage nextPageNum}}{{else}}{{goPage command.page}}{{/if}}">
+        <i class="fas fa-angle-right"></i>
+     </a>                  
+  </li>
+  <li class="page-item">
+     <a class="page-link" href="{{goPage realEndPage}}">
+        <i class="fas fa-angle-double-right"></i>
+     </a>
+  </li>
+</script>
+
+<script>
+  Handlebars.registerHelper({
+    "prettifyDate":function(timeValue){ //Handlbars에 날짜출력함수 등록
+         var dateObj=new Date(timeValue);
+         var year=dateObj.getFullYear();
+         var month=dateObj.getMonth()+1;
+         var date=dateObj.getDate();
+         return year+"/"+month+"/"+date;
+      },
+      "VisibleByLoginCheck":function(replyer){
+         var result="none";      
+         if(replyer == "mimi") result="visible";      
+         return result;                    
+      },
+      "goPage":function(pageNum){
+         return 'javascript:getPage('+pageNum+');';
+      },
+      "signActive":function(pageNum){
+         if(pageNum == currentPage) return 'active';
+      }
+  });
+
+  let reply_list_func = Handlebars.compile($("#reply-list-template").html());
+  let pagination_func = Handlebars.compile($("#reply-pagination-template").html());
+
+  getPage(1);
+  function getPage(page){
+    $.ajax({
+      url:"/application/reply/list?bno=22543&page="+page,
+      method:"get",
+      success:function(data){
+        //console.log(data);
+        let reply_html = reply_list_func(data.replyList);
+        $('.replyLi').remove();
+        $('#repliesDiv').after(reply_html);
+
+        if(page) currentPage = page;
+      
+        let pageMaker = data.pageMaker;
+        
+        var pageNumArray = new Array(pageMaker.endPage-pageMaker.startPage+1);
+        for(var i=pageMaker.startPage;i<pageMaker.endPage+1;i++){
+          pageNumArray[i-pageMaker.startPage]=i;
+        }   
+        
+        pageMaker.pageNum=pageNumArray;  
+        pageMaker.prevPageNum=pageMaker.startPage-1;
+        pageMaker.nextPageNum=pageMaker.endPage+1;
+        
+        var pagination_html = pagination_func(data.pageMaker);
+        $("#pagination").html(pagination_html);
+      }
+    });
+  }
+
+  function replyModifyModal_go(rno){
+    //alert(rno);
+    $('#replytext').val($('div#'+rno+'-replytext').text());
+    $('h4.modal-title').text(rno);
+  }
+
+  //댓글 수정.
+  function replyModify_go(){
+    //alert("click modify");
+    var rno=$('div#modifyModal h4.modal-title').text();
+    var replytext=$('div#modifyModal #replytext').val();
+
+    //alert(rno+":"+replytext);
+    var sendData={
+         "rno":rno,
+         "replytext":replytext
+    }
+
+    $.ajax({
+      url:"/application/reply/modify",
+      method:"PUT",
+      data:JSON.stringify(sendData),
+      contentType:"application/json",
+      headers: {"X-HTTP-Method-Override":"PUT"},
+      success:function(result){
+        getPage(currentPage);
+  
+      },
+      complete:function(){
+         $('#modifyModal').modal('hide');
+      }
+    });
+
+
+  }
+  var currentPage = 1;
+  //댓글 삭제  
+  function replyRemove_go(){
+    //alert("click remove");
+    var rno=$('h4.modal-title').text();
+    //alert(rno);
+
+    $.ajax({
+      url:"/application/reply/remove.do?rno="+rno+"&page="+currentPage+"&bno=22543",
+      method:"get",
+      success:function(page){
+        alert("삭제되었습니다.");
+        getPage(page);
+        currentPage=page;
+      },
+      complete:function(){
+        $('#modifyModal').modal('hide');
+      }
+    });
+  }
+
+  function replyRegist_go(){
+    //alert("click add");
+    var replytext=$('#newReplyText').val();   
+    //alert(replytext);
+    var data={
+         "bno":"22543",
+         "replyer":"mimi",
+         "replytext":replytext   
+    }
+
+    $.ajax({
+      url:"/application/reply/regist",
+      method:"post",
+      data:JSON.stringify(data),      
+      contentType:'application/json',
+      success:function(data){
+         alert('댓글이 등록되었습니다.\n마지막페이지로 이동합니다.');
+         currentPage=data; //페이지이동
+         getPage(data); //리스트 출력
+         $('#newReplyText').val("");            
+      }
+    });
+  }
+</script>
+</body>
+</html>
